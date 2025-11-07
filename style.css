@@ -1,0 +1,290 @@
+/* RESET E GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* NAVEGAÇÃO - Esconde após intro */
+#barra-nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.411);
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.nav-botoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.btn-nav {
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.8em;
+    width: 10em;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#raiden-btn:hover {
+    background-color: rgba(119, 0, 255, 0.4);
+}
+
+#kokomi-btn:hover {
+    background-color: rgba(0, 204, 255, 0.4);
+}
+
+#yae-btn:hover {
+    background-color: rgba(128, 38, 53, 0.4);
+}
+
+#scara-btn:hover {
+    background-color: rgba(8, 124, 145, 0.4);
+}
+
+/* SEÇÕES COM VÍDEO */
+#secao-intro, .slide {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#secao-intro .video-fundo, .slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INTRODUÇÃO */
+.descricao-inazuma {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    color: white;
+    font-style: italic;
+    z-index: 3;
+}
+
+.citacao {
+    background-color: rgba(0, 0, 0, 0.73);
+    border-radius: 12.5px;
+    padding: 15px;
+    line-height: 1.6;
+}
+
+/* FLIP CARD - Sistema de checkbox escondido */
+.flip-checkbox {    
+    display: none;
+}
+
+.card-personagem-container {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-70%);
+    width: 430px;
+    height: 600px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-personagem {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* Rotaciona o card quando checkbox está marcado */
+.flip-checkbox:checked + .card-personagem-container .card-personagem {
+    transform: rotateY(180deg);
+}
+
+.card-frente,
+.card-verso {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 20px;
+    border-radius: 15px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+
+#scara-video {
+    transform: scaleX(-1);
+
+}
+
+.card-frente {
+    transform: rotateY(0deg);
+}
+
+.card-verso {
+    transform: rotateY(180deg);
+}
+
+/* Cores específicas */
+.card-personagem[data-char="raiden"] .card-frente,
+.card-personagem[data-char="raiden"] .card-verso {
+    background-color: rgba(119, 0, 255, 0.4);
+}
+
+.card-personagem[data-char="kokomi"] .card-frente,
+.card-personagem[data-char="kokomi"] .card-verso {
+    background-color: rgba(0, 204, 255, 0.4);
+}
+
+.card-personagem[data-char="yae"] .card-frente,
+.card-personagem[data-char="yae"] .card-verso {
+    background-color: rgba(255, 192, 203, 0.4);
+}
+
+.card-personagem[data-char="scara"] .card-frente,
+.card-personagem[data-char="scara"] .card-verso {
+    background-color: rgba(8, 124, 145, 0.4);
+}
+
+/* Tipografia dos cards */
+.card-personagem h1 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.card-personagem h2 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.card-personagem p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.card-personagem ul {
+    list-style-type: square;
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.card-personagem li {
+    margin: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.clique-info {
+    text-align: center;
+    font-size: 0.85px;
+    margin-top: 15px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Imagens dos cards */
+.demo-personagem {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.conjunto-artefatos {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.conjunto-artefatos img {
+    width: 18%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.conjunto-artefatos img:hover { 
+    transform: scale(1.1); 
+}
+
+iframe {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    margin: 15px 0;
+}
+
+/* GALERIA */
+#galeria-inazuma {
+    position: relative;
+    padding: 100px 2% 50px;
+    min-height: 100vh;
+}
+
+.titulo-galeria {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.titulo-galeria h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 2em;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+#personagens-btn {
+    display: none;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 580px) {
+    #raiden-btn, #kokomi-btn, #yae-btn, #scara-btn {
+        display: none;
+    }
+}
+

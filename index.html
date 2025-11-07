@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santuário Grand Narukami</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVEGAÇÃO -->
+    <nav id="barra-nav">
+        <div class="nav-botoes">
+            <div>
+                <a href="#secao-intro" class="btn-nav" id="intro-btn">Início</a>
+            </div>
+            <div>
+                <a href="#slide-raiden" class="btn-nav" id="raiden-btn">Raiden Shogun</a>
+                <a href="#slide-kokomi" class="btn-nav" id="kokomi-btn">Kokomi</a>
+                <a href="#slide-yae" class="btn-nav" id="yae-btn">Yae Miko</a>
+                <a href="#slide-scara" class="btn-nav" id="scara-btn">Scara</a>
+                <a href="#personagens-ocultos" class="btn-nav" id="personagens-btn">Personagens</a>
+            </div>
+            <div>
+                <a href="#galeria-inazuma" class="btn-nav" id="galeria-btn">Galeria</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- INTRODUÇÃO -->
+    <section id="secao-intro">
+        <video autoplay loop muted class="video-fundo">
+            <source src="resources/inazuma_castle.mp4" type="video/mp4">
+        </video>
+        
+        <div class="descricao-inazuma">
+            <h2 class="citacao">
+                "Um arquipélago isolado <span style="color: rgb(128, 187, 255)">distante ao extremo leste de Teyvat.</span>
+                <br>Supere tempestades intermináveis e pise nas ilhas de <span style="color: rgb(241, 45, 11)">bordo vermelho</span> e <span style="color: rgb(255, 111, 135)">cerejeiras.</span>
+                <br>Em praias sinuosas, penhascos imponentes, em florestas e montanhas cheias de segredos, testemunhe a Eternidade buscada por sua excelência, a <span style="color: rgb(121, 0, 207); filter: brightness(1.6);">Todo-Poderosa Narukami Ogosho.</span>"
+            </h2>
+        </div>
+    </section>
+
+    <!-- PERSONAGENS -->
+    <section class="slide" id="slide-raiden">
+        <video autoplay loop muted>
+            <source src="resources/raiden-video.mp4" type="video/mp4">
+        </video>
+        
+        <input type="checkbox" id="flip-raiden" class="flip-checkbox">
+        <label for="flip-raiden" class="card-personagem-container" data-char="raiden">
+            <div class="card-personagem" data-char="raiden">
+                <div class="card-frente">
+                    <h1>Raiden Shogun</h1>
+                    <ul>
+                        <li><strong>Ataque Normal:</strong> Origem</li>
+                        <li><strong>Transcendência:</strong> Presságio Maléfico</li>
+                        <li><strong>Arte Secreta:</strong> Musou Shinsetsu</li>
+                    </ul>
+                    <img class="demo-personagem" src="resources/raiden-showcase.gif" alt="Raiden Demo">
+                    
+                    <h2>Build</h2>
+                    <p>4 peças Emblema do Destino Cortado</p>
+                    <div class="conjunto-artefatos">
+                        <img src="resources/emblem-flower.png" alt="Flor">
+                        <img src="resources/emblem-feather.png" alt="Pena">
+                        <img src="resources/emblem-sands.png" alt="Ampulheta">
+                        <img src="resources/emblem-goblet.png" alt="Cálice">
+                        <img src="resources/emblem-circlet.png" alt="Coroa">
+                    </div>
+                    <p class="clique-info">👆 Clique para ver mais</p>
+                </div>
+                
+                <div class="card-verso">
+                    <h1>Raiden Shogun</h1>
+                    <h2>História</h2>
+                    <p>A Shogun Raiden é a governante suprema de Inazuma, uma manifestação da eternidade. Ela busca preservar Inazuma em um estado imutável, acreditando que a mudança traz apenas perda e sofrimento.</p>
+                    
+                    <h2>Informações</h2>
+                    <ul>
+                        <li><strong>Elemento:</strong> Electro ⚡</li>
+                        <li><strong>Arma:</strong> Espada</li>
+                        <li><strong>Região:</strong> Inazuma</li>
+                        <li><strong>Raridade:</strong> ⭐⭐⭐⭐⭐</li>
+                        <li><strong>Papel:</strong> Sub-DPS / Suporte</li>
+                    </ul>
+                    
+                    <h2>Personalidade</h2>
+                    <p>Determinada e inflexível em sua busca pela eternidade. Possui duas consciências: Ei, a verdadeira governante, e a Shogun, uma marionete criada para governar em seu lugar.</p>
+
+                    <h3>Trailer</h3>
+                    <iframe src="https://www.youtube.com/embed/mvrW4aKwAXw?si=rj_aF7Am2jazmASt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    <p class="clique-info">👆 Clique para voltar</p>
+                </div>
+            </div>
+        </label>
+    </section>
+
+    <section class="slide" id="slide-kokomi">
+        <video autoplay loop muted>
+            <source src="resources/kokomi-video.mp4" type="video/mp4">
+        </video>
+        
+        <input type="checkbox" id="flip-kokomi" class="flip-checkbox">
+        <label for="flip-kokomi" class="card-personagem-container" data-char="kokomi">
+            <div class="card-personagem" data-char="kokomi">
+                <div class="card-frente">
+                    <h1>Sangonomiya Kokomi</h1>
+                    <ul>
+                        <li><strong>Ataque Normal:</strong> A Forma da Água</li>
+                        <li><strong>Transcendência:</strong> Juramento da Água-Viva</li>
+                        <li><strong>Arte Secreta:</strong> Ascensão da Nereida</li>
+                    </ul>
+                    <img class="demo-personagem" src="resources/kokomi-showcase.gif" alt="Kokomi Demo">
+                    
+                    <h2>Build</h2>
+                    <p>4 peças Concha Matizada do Oceano</p>
+                    <div class="conjunto-artefatos">
+                        <img src="resources/ocean-flower.png" alt="Flor">
+                        <img src="resources/ocean-feather.png" alt="Pena">
+                        <img src="resources/ocean-sands.png" alt="Ampulheta">
+                        <img src="resources/ocean-goblet.png" alt="Cálice">
+                        <img src="resources/ocean-circlet.png" alt="Coroa">
+                    </div>
+                    <p class="clique-info">👆 Clique para ver mais</p>
+                </div>
+                
+                <div class="card-verso">
+                    <h1>Sangonomiya Kokomi</h1>
+                    <h2>História</h2>
+                    <p>Líder da Ilha Watatsumi e Sacerdotisa Divina. Kokomi é uma estrategista brilhante que liderou a resistência contra o Decreto de Caça às Visões imposto pela Shogun Raiden.</p>
+                    
+                    <h2>Informações</h2>
+                    <ul>
+                        <li><strong>Elemento:</strong> Hydro 💧</li>
+                        <li><strong>Arma:</strong> Catalisador</li>
+                        <li><strong>Região:</strong> Inazuma</li>
+                        <li><strong>Raridade:</strong> ⭐⭐⭐⭐⭐</li>
+                        <li><strong>Papel:</strong> Suporte / Curandeira</li>
+                    </ul>
+                    
+                    <h2>Personalidade</h2>
+                    <p>Calma, sábia e calculista. Apesar de ser uma líder competente, Kokomi é introvertida e precisa de tempo sozinha para recarregar suas energias após interações sociais.</p>
+
+                    <h3>Trailer</h3>
+                    <iframe src="https://www.youtube.com/embed/fVf0RB3nvOU?si=K3JdqhkwaWXU4use" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p class="clique-info">👆 Clique para voltar</p>
+                </div>
+            </div>
+        </label>
+    </section>
+
+    <section class="slide" id="slide-yae">
+        <video autoplay loop muted>
+            <source src="resources/yae-showcase.mp4" type="video/mp4">
+        </video>
+        
+        <input type="checkbox" id="flip-yae" class="flip-checkbox">
+        <label for="flip-yae" class="card-personagem-container" data-char="yae">
+            <div class="card-personagem" data-char="yae">
+                <div class="card-frente">
+                    <h1>Yae Miko</h1>
+                    <ul>
+                        <li><strong>Ataque Normal:</strong> Devorador de Pecados da Raposa Espiritual</li>
+                        <li><strong>Evocação Yakan:</strong> Sesshou Sakura</li>
+                        <li><strong>Grande Arte Secreta:</strong> Tenko Kenshin</li>
+                    </ul>
+                    <img class="demo-personagem" src="resources/yae-demo.gif" alt="Yae Demo">
+                    
+                    <h2>Build</h2>
+                    <p>4 peças Fúria Trovejante</p>
+                    <div class="conjunto-artefatos">
+                        <img src="resources/fury-flower.png" alt="Flor">
+                        <img src="resources/fury-feather.png" alt="Pena">
+                        <img src="resources/fury-sands.png" alt="Ampulheta">
+                        <img src="resources/fury-goblet.png" alt="Cálice">
+                        <img src="resources/fury-circlet.png" alt="Coroa">
+                    </div>
+                    <p class="clique-info">👆 Clique para ver mais</p>
+                </div>
+                
+                <div class="card-verso">
+                    <h1>Yae Miko</h1>
+                    <h2>História</h2>
+                    <p>Guuji do Santuário Grand Narukami e amiga próxima de Ei. Yae Miko é uma kitsune com centenas de anos, editora-chefe da Casa Editora Yae e guardiã espiritual de Inazuma.</p>
+                    
+                    <h2>Informações</h2>
+                    <ul>
+                        <li><strong>Elemento:</strong> Electro ⚡</li>
+                        <li><strong>Arma:</strong> Catalisador</li>
+                        <li><strong>Região:</strong> Inazuma</li>
+                        <li><strong>Raridade:</strong> ⭐⭐⭐⭐⭐</li>
+                        <li><strong>Papel:</strong> Sub-DPS / DPS</li>
+                    </ul>
+                    
+                    <h2>Personalidade</h2>
+                    <p>Misteriosa, travessa e astuta. Yae adora provocar as pessoas e observar suas reações. Apesar de sua natureza brincalhona, ela é extremamente sábia e cuida profundamente de Inazuma.</p>
+
+                    <h2>Trailer</h2>
+                    <iframe src="https://www.youtube.com/embed/4yFiBhNIWYo?si=pDRoDMtDL7k9gBXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+                    <p class="clique-info">👆 Clique para voltar</p>
+                </div>
+            </div>
+        </label>
+    </section>
+
+    <section class="slide" id="slide-scara">
+        <video  id="scara-video" autoplay loop muted>
+            <source src="resources/scara-slide.mp4" type="video/mp4">
+        </video>
+
+        <input type="checkbox" id="flip-scara" class="flip-checkbox">
+        <label for="flip-scara" class="card-personagem-container" data-char="scara">
+            <div class="card-personagem" data-char="scara">
+                <div class="card-frente">
+                    <h1>Scara</h1>
+                    <ul>
+                        <li><strong>Ataque Normal:</strong> Espada de Fogo</li>
+                        <li><strong>Evocação Yakan:</strong> Espada de Fogo</li>
+                        <li><strong>Grande Arte Secreta:</strong> Espada de Fogo</li>
+                    </ul>
+                    <img class="demo-personagem" src="resources/scara-demo.gif" alt="Scara Demo">
+                    
+                    <h2>Build</h2>
+                    <p>4 peças Crônicas do Pavilhão do Deserto</p>
+                    <div class="conjunto-artefatos">
+                        <img src="resources/scara-flower.png" alt="Flor">
+                        <img src="resources/scara-feather.png" alt="Pena">
+                        <img src="resources/scara-sands.png" alt="Ampulheta">
+                        <img src="resources/scara-goblet.png" alt="Cálice">
+                        <img src="resources/scara-circlet.png" alt="Coroa">
+                    </div>
+                    <p class="clique-info">👆 Clique para ver mais</p>
+                </div>
+
+                <div class="card-verso">
+                    <h1>Scara</h1>
+                    <h2>História</h2>
+                    <p>Scaramouche era originalmente o sexto dos onze “Fatui Harbingers”, conhecido também como o “Balladeer”. Ele foi criado como um protótipo pela arquôn­ta Ei (Raiden Shogun) para conduzir a Gnosis Electro, mas foi abandonado.</p>
+
+                    <h2>Informações</h2>
+                    <ul>
+                        <li><strong>Elemento:</strong> Ameno 🍃</li>
+                        <li><strong>Arma:</strong> Catalisador</li>
+                        <li><strong>Região:</strong> Inazuma</li>
+                        <li><strong>Raridade:</strong> ⭐⭐⭐⭐⭐</li>
+                        <li><strong>Papel:</strong> DPS</li>
+                    </ul>
+
+                    <h2>Personalidade</h2>
+                    <p>Scaramouche tem uma personalidade complexa — arrogante, manipuladora durante seu tempo como Harbinger, mas também marcada por abandono e busca por identidade. Como Wanderer, há traços de melancolia, desgosto com seu passado e desejo de livre-andar.</p>
+
+                    <h2>Trailer</h2>
+                    <iframe src="https://www.youtube.com/embed/NHEE_-87mNE?si=i4o0Cl1prysOnmdy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </label>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria-inazuma">
+        <div class="titulo-galeria">
+            <h1>Lugares para Visitar em Inazuma</h1>
+        </div>
+        
+        <div class="grid-galeria">
+            <img src="resources/shogun-castle.webp" alt="Castelo Shogun">
+            <img src="resources/tenshukaku.PNG" alt="Tenshukaku">
+            <img src="resources/watatsumi.webp" alt="Ilha Watatsumi">
+            <img src="resources/serai-island.jpg" alt="Ilha Serai">
+            <img src="resources/inazuma-forest.jpg" alt="Floresta de Inazuma">
+            <img src="resources/inazuma-serpent.jpg" alt="Serpente">
+            <img src="resources/ghost-island.jpg" alt="Ilha Fantasma">
+            <img src="resources/mt_yugou.webp" alt="Monte Yugou">
+        </div>
+    </section>
+</body>
+</html>
