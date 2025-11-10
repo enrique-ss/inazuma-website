@@ -12,15 +12,15 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
 }
 
-/* NAVEGAÇÃO - Esconde após intro */
+/* NAVEGAÇÃO */
 #barra-nav {
     position: fixed;
     top: 0;
     z-index: 100;
     background: rgba(0, 0, 0, 0.411);
-    justify-content: center;
     padding: 20px;
     width: 100%;
 }
@@ -28,34 +28,28 @@ body {
 .nav-botoes {
     display: flex;
     justify-content: space-around;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn-nav {
     color: white;
     border: 1px solid white;
     border-radius: 0.8em;
-    width: 10em;
+    min-width: 100px;
     text-align: center;
-    padding: 10px;
+    padding: 10px 15px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
 }
 
-#raiden-btn:hover {
-    background-color: rgba(119, 0, 255, 0.4);
-}
-
-#kokomi-btn:hover {
-    background-color: rgba(0, 204, 255, 0.4);
-}
-
-#yae-btn:hover {
-    background-color: rgba(128, 38, 53, 0.4);
-}
-
-#scara-btn:hover {
-    background-color: rgba(8, 124, 145, 0.4);
-}
+#raiden-btn:hover { background-color: rgba(119, 0, 255, 0.4); }
+#kokomi-btn:hover { background-color: rgba(0, 204, 255, 0.4); }
+#yae-btn:hover { background-color: rgba(128, 38, 53, 0.4); }
+#scara-btn:hover { background-color: rgba(8, 124, 145, 0.4); }
+#intro-btn:hover, #galeria-btn:hover { background-color: rgba(255, 255, 255, 0.2); }
 
 /* SEÇÕES COM VÍDEO */
 #secao-intro, .slide {
@@ -71,27 +65,34 @@ body {
     object-fit: cover;
 }
 
+#scara-video {
+    transform: scaleX(-1);
+}
+
 /* INTRODUÇÃO */
 .descricao-inazuma {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 90%;
+    max-width: 800px;
     color: white;
     font-style: italic;
     z-index: 3;
+    padding: 20px;
 }
 
 .citacao {
     background-color: rgba(0, 0, 0, 0.73);
     border-radius: 12.5px;
-    padding: 15px;
+    padding: 20px;
     line-height: 1.6;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 
-/* FLIP CARD - Sistema de checkbox escondido */
-.flip-checkbox {    
+/* SISTEMA FLIP CARD */
+.flip-checkbox {
     display: none;
 }
 
@@ -99,11 +100,12 @@ body {
     position: absolute;
     top: 50%;
     left: 5%;
-    transform: translateY(-70%);
-    width: 430px;
-    height: 600px;
+    transform: translateY(-50%);
+    width: min(430px, 90vw);
+    height: min(600px, 85vh);
     perspective: 1000px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .card-personagem {
@@ -114,37 +116,34 @@ body {
     transition: transform 0.6s;
 }
 
-/* Rotaciona o card quando checkbox está marcado */
 .flip-checkbox:checked + .card-personagem-container .card-personagem {
     transform: rotateY(180deg);
 }
 
-.card-frente,
-.card-verso {
-    color: rgb(255, 255, 255);
+.card-frente, .card-verso {
+    color: white;
     position: absolute;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     padding: 20px;
     border-radius: 15px;
     overflow-y: auto;
     backdrop-filter: blur(10px);
-    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
 }
 
-#scara-video {
-    transform: scaleX(-1);
-
+.card-frente::-webkit-scrollbar,
+.card-verso::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
 }
 
-.card-frente {
-    transform: rotateY(0deg);
-}
+.card-frente { transform: rotateY(0deg); }
+.card-verso { transform: rotateY(180deg); }
 
-.card-verso {
-    transform: rotateY(180deg);
-}
-
-/* Cores específicas */
+/* CORES DOS PERSONAGENS */
 .card-personagem[data-char="raiden"] .card-frente,
 .card-personagem[data-char="raiden"] .card-verso {
     background-color: rgba(119, 0, 255, 0.4);
@@ -165,21 +164,27 @@ body {
     background-color: rgba(8, 124, 145, 0.4);
 }
 
-/* Tipografia dos cards */
+/* TIPOGRAFIA DOS CARDS */
 .card-personagem h1 {
     margin-bottom: 10px;
-    font-size: 1.5em;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
 }
 
 .card-personagem h2 {
     margin-top: 15px;
     margin-bottom: 5px;
-    font-size: 1.2em;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+}
+
+.card-personagem h3 {
+    margin-top: 10px;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
 }
 
 .card-personagem p {
     margin-bottom: 10px;
-    font-size: 0.95em;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    line-height: 1.5;
 }
 
 .card-personagem ul {
@@ -190,19 +195,19 @@ body {
 
 .card-personagem li {
     margin: 8px 0;
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
     line-height: 1.4;
 }
 
 .clique-info {
     text-align: center;
-    font-size: 0.85px;
+    font-size: 0.85rem;
     margin-top: 15px;
     opacity: 0.8;
     font-style: italic;
 }
 
-/* Imagens dos cards */
+/* IMAGENS DOS CARDS */
 .demo-personagem {
     width: 100%;
     max-height: 250px;
@@ -221,25 +226,28 @@ body {
 
 .conjunto-artefatos img {
     width: 18%;
+    min-width: 50px;
     height: auto;
     transition: transform 0.3s;
 }
 
-.conjunto-artefatos img:hover { 
-    transform: scale(1.1); 
+.conjunto-artefatos img:hover {
+    transform: scale(1.1);
 }
 
 iframe {
     border-radius: 10px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 200px;
     margin: 15px 0;
+    border: none;
 }
 
 /* GALERIA */
 #galeria-inazuma {
     position: relative;
-    padding: 100px 2% 50px;
+    padding: 120px 2% 50px;
     min-height: 100vh;
 }
 
@@ -254,12 +262,12 @@ iframe {
     padding: 15px 30px;
     border-radius: 8px;
     display: inline-block;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .grid-galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 0 20px;
 }
@@ -273,18 +281,133 @@ iframe {
     cursor: pointer;
 }
 
-#personagens-btn {
-    display: none;
-}
-
 .grid-galeria img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
+#personagens-btn {
+    display: none;
+}
+
+/* Mobile */
 @media screen and (max-width: 580px) {
+    #barra-nav {
+        padding: 15px 10px;
+    }
+
+    .nav-botoes {
+        flex-direction: wrap;
+        gap: 10px;
+    }
+
+    .nav-botoes > div {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-nav {
+        min-width: 90px;
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+
+    /* Esconder botões de personagens individuais no mobile */
     #raiden-btn, #kokomi-btn, #yae-btn, #scara-btn {
         display: none;
     }
+
+    #personagens-btn {
+        display: inline-block;
+    }
+
+    .descricao-inazuma {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .citacao {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    .card-personagem-container {
+        width: 95vw;
+        height: 85vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card-frente, .card-verso {
+        padding: 15px;
+    }
+
+    .card-personagem h1 {
+        font-size: 1.3rem;
+    }
+
+    .demo-personagem {
+        max-height: 200px;
+    }
+
+    iframe {
+        height: 160px;
+        max-width: 100%;
+    }
+
+    #galeria-inazuma {
+        padding: 100px 10px 30px;
+    }
+
+    .titulo-galeria h1 {
+        padding: 12px 20px;
+        font-size: 1.4rem;
+    }
+
+    .grid-galeria {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .grid-galeria img {
+        height: 220px;
+    }
+
+    .conjunto-artefatos img {
+        width: 17%;
+        min-width: 45px;
+    }
 }
 
+/* Mobile pequeno */
+@media screen and (max-width: 380px) {
+    .btn-nav {
+        min-width: 75px;
+        padding: 6px 8px;
+        font-size: 0.75em;
+    }
+
+    .citacao {
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+
+    .card-personagem h1 {
+        font-size: 1.1rem;
+    }
+
+    .card-personagem p, .card-personagem li {
+        font-size: 0.8rem;
+    }
+
+    iframe {
+        height: 140px;
+    }
+
+    .grid-galeria img {
+        height: 180px;
+    }
+}
